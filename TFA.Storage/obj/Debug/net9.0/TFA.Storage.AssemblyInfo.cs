@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TFA.Storage")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f4d88d5032cb27a896dc3916f06b86a1d74546f")]
 [assembly: System.Reflection.AssemblyProductAttribute("TFA.Storage")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TFA.Storage")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

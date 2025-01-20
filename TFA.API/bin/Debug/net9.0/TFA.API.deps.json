@@ -602,9 +602,6 @@
       "System.Text.Json/9.0.1": {},
       "System.Threading.Channels/7.0.0": {},
       "TFA.Domain/1.0.0": {
-        "dependencies": {
-          "TFA.Storage": "1.0.0"
-        },
         "runtime": {
           "TFA.Domain.dll": {
             "assemblyVersion": "1.0.0",
@@ -616,7 +613,8 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "9.0.1",
           "Microsoft.EntityFrameworkCore.Relational": "9.0.1",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.1"
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.1",
+          "TFA.Domain": "1.0.0"
         },
         "runtime": {
           "TFA.Storage.dll": {

@@ -194,3 +194,4 @@ D:\C#-projects\TFA\TFA.API\obj\Debug\net9.0\TFA.API.genruntimeconfig.cache
 D:\C#-projects\TFA\TFA.API\obj\Debug\net9.0\ref\TFA.API.dll
 D:\C#-projects\TFA\TFA.API\bin\Debug\net9.0\TFA.Domain.dll
 D:\C#-projects\TFA\TFA.API\bin\Debug\net9.0\TFA.Domain.pdb
+D:\C#-projects\TFA\TFA.API\obj\Debug\net9.0\TFA.API.sourcelink.json

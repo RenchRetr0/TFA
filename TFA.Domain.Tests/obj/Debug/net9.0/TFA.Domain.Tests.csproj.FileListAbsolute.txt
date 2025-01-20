@@ -123,3 +123,4 @@ D:\C#-projects\TFA\TFA.Domain.Tests\bin\Debug\net9.0\Moq.dll
 D:\C#-projects\TFA\TFA.Domain.Tests\bin\Debug\net9.0\System.Diagnostics.EventLog.dll
 D:\C#-projects\TFA\TFA.Domain.Tests\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll
 D:\C#-projects\TFA\TFA.Domain.Tests\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll
+D:\C#-projects\TFA\TFA.Domain.Tests\obj\Debug\net9.0\TFA.Domain.Tests.sourcelink.json

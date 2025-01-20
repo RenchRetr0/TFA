@@ -264,6 +264,16 @@
             "related": ".xml"
           }
         }
+      },
+      "TFA.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/TFA.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TFA.Domain.dll": {}
+        }
       }
     }
   },
@@ -677,13 +687,19 @@
         "npgsql.entityframeworkcore.postgresql.nuspec",
         "postgresql.png"
       ]
+    },
+    "TFA.Domain/1.0.0": {
+      "type": "project",
+      "path": "../TFA.Domain/TFA.Domain.csproj",
+      "msbuildProject": "../TFA.Domain/TFA.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
       "Microsoft.EntityFrameworkCore >= 9.0.1",
       "Microsoft.EntityFrameworkCore.Relational >= 9.0.1",
-      "Npgsql.EntityFrameworkCore.PostgreSQL >= 9.0.1"
+      "Npgsql.EntityFrameworkCore.PostgreSQL >= 9.0.1",
+      "TFA.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -710,7 +726,11 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\C#-projects\\TFA\\TFA.Domain\\TFA.Domain.csproj": {
+              "projectPath": "D:\\C#-projects\\TFA\\TFA.Domain\\TFA.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

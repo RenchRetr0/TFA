@@ -120,11 +120,7 @@
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
-            "projectReferences": {
-              "D:\\C#-projects\\TFA\\TFA.Storage\\TFA.Storage.csproj": {
-                "projectPath": "D:\\C#-projects\\TFA\\TFA.Storage\\TFA.Storage.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -183,7 +179,11 @@
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\C#-projects\\TFA\\TFA.Domain\\TFA.Domain.csproj": {
+                "projectPath": "D:\\C#-projects\\TFA\\TFA.Domain\\TFA.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

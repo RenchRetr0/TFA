@@ -1011,9 +1011,6 @@
       "TFA.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
-        "dependencies": {
-          "TFA.Storage": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/TFA.Domain.dll": {}
         },
@@ -1027,7 +1024,8 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "9.0.1",
           "Microsoft.EntityFrameworkCore.Relational": "9.0.1",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.1"
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.1",
+          "TFA.Domain": "1.0.0"
         },
         "compile": {
           "bin/placeholder/TFA.Storage.dll": {}
