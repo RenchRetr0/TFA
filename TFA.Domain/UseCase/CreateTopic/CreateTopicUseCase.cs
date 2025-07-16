@@ -1,3 +1,4 @@
+using FluentValidation;
 using TFA.Domain.Authentication;
 using TFA.Domain.Authorization;
 using TFA.Domain.Exceptions;
@@ -7,23 +8,29 @@ namespace TFA.Domain.UseCase.CreateTopic;
 
 public class CreateTopicUseCase : ICreateTopicUseCase
 {
+    private readonly IValidator<CreateTopicCommand> validator;
     private readonly IIntentionManager intentionManager;
     private readonly IIdentityProvider identityProvider;
     private readonly ICreateTopicStorage storage;
 
     public CreateTopicUseCase(
+        IValidator<CreateTopicCommand> validator,
         IIntentionManager intentionManager,
         IIdentityProvider identityProvider,
         ICreateTopicStorage storage
     )
     {
+        this.validator = validator;
         this.intentionManager = intentionManager;
         this.storage = storage;
         this.identityProvider = identityProvider;
     }
 
-    public async Task<Topic> Execute(Guid forumId, string title, CancellationToken cancellationToken)
+    public async Task<Topic> Execute(CreateTopicCommand command, CancellationToken cancellationToken)
     {
+        await validator.ValidateAndThrowAsync(command, cancellationToken);
+
+        var (forumId, title) = command;
         intentionManager.ThrowIfForbidden(TopicIntention.Create);
         
         var forumExist = await storage.ForumExists(forumId, cancellationToken);

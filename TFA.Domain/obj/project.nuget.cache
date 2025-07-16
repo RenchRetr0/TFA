@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "S9qTlRDTjcE=",
+  "dgSpecHash": "SocSVItbpBY=",
   "success": true,
   "projectFilePath": "D:\\C#-projects\\TFA\\TFA.Domain\\TFA.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\logis\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512"
+  ],
   "logs": []
 }

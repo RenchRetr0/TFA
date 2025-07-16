@@ -1,7 +1,7 @@
 namespace TFA.Domain.Authorization;
 
-public class IntentionManagerExtension : Exception
+public class IntentionManagerException : Exception
 {
-    public IntentionManagerExtension() : base("Action is not allowed")
+    public IntentionManagerException() : base("Action is not allowed")
     {}
 }

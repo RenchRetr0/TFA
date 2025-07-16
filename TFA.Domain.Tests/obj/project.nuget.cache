@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "fU6Ym2hCcTE=",
+  "dgSpecHash": "YGZBlHzXUXU=",
   "success": true,
   "projectFilePath": "D:\\C#-projects\\TFA\\TFA.Domain.Tests\\TFA.Domain.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\logis\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\logis\\.nuget\\packages\\coverlet.collector\\6.0.2\\coverlet.collector.6.0.2.nupkg.sha512",
     "C:\\Users\\logis\\.nuget\\packages\\fluentassertions\\8.0.0\\fluentassertions.8.0.0.nupkg.sha512",
+    "C:\\Users\\logis\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
     "C:\\Users\\logis\\.nuget\\packages\\microsoft.codecoverage\\17.12.0\\microsoft.codecoverage.17.12.0.nupkg.sha512",
     "C:\\Users\\logis\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.1\\microsoft.entityframeworkcore.9.0.1.nupkg.sha512",
     "C:\\Users\\logis\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.1\\microsoft.entityframeworkcore.abstractions.9.0.1.nupkg.sha512",

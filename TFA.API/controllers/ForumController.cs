@@ -1,7 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using TFA.API.Models;
-using TFA.Domain.Authorization;
-using TFA.Domain.Exceptions;
 using TFA.Domain.UseCase.CreateTopic;
 using TFA.Domain.UseCase.GetForums;
 
@@ -36,24 +34,13 @@ public class ForumController: ControllerBase
         CancellationToken cancellationToken
     )
     {
-        try
-        {
-            var topic = await useCase.Execute(forumId, request.Title, cancellationToken);
-            return CreatedAtRoute(nameof(GetForums), new Topic{
-                Id = topic.Id,
-                Title = topic.Title,
-                CreateAt = topic.CreatedAt
-            });
-        }
-        catch(Exception exception)
-        {
-            return exception switch
-            {
-                IntentionManagerExtension => Forbid(),
-                ForumNotFoundException => StatusCode(StatusCodes.Status410Gone),
-                _ => StatusCode(StatusCodes.Status500InternalServerError)
-            };
-        }
+        var command = new CreateTopicCommand(forumId, request.Title);
+        var topic = await useCase.Execute(command, cancellationToken);
+        return CreatedAtRoute(nameof(GetForums), new Topic{
+            Id = topic.Id,
+            Title = topic.Title!,
+            CreateAt = topic.CreatedAt
+        });
     }
 
 }
