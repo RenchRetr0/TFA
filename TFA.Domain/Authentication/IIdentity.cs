@@ -5,17 +5,17 @@ public interface IIdentity
     Guid UserId { get; }
 }
 
-public class User : IIdentity
+internal class User : IIdentity
 {
     public User(Guid userId)
     {
         UserId = userId;
     }
-    
+
     public Guid UserId { get; }
 }
 
-public static class IdentityExceptions
+internal static class IdentityExceptions
 {
     public static bool IsAuthentication(this IIdentity identity) => identity.UserId != Guid.Empty;
 }

@@ -6,7 +6,7 @@ using Topic = TFA.Domain.Models.Topic;
 
 namespace TFA.Domain.UseCase.CreateTopic;
 
-public class CreateTopicUseCase : ICreateTopicUseCase
+internal class CreateTopicUseCase : ICreateTopicUseCase
 {
     private readonly IValidator<CreateTopicCommand> validator;
     private readonly IIntentionManager intentionManager;
@@ -32,9 +32,9 @@ public class CreateTopicUseCase : ICreateTopicUseCase
 
         var (forumId, title) = command;
         intentionManager.ThrowIfForbidden(TopicIntention.Create);
-        
+
         var forumExist = await storage.ForumExists(forumId, cancellationToken);
-        if(!forumExist)
+        if (!forumExist)
         {
             throw new ForumNotFoundException(forumId);
         }

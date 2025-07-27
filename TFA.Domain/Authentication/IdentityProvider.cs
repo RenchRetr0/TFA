@@ -2,5 +2,5 @@ namespace TFA.Domain.Authentication;
 
 public class IdentityProvider : IIdentityProvider
 {
-    public IIdentity Current => new User(Guid.Parse("9fc3581b-10b0-45c3-886b-4084670ec429"));
+    public IIdentity Current => new User(Guid.Parse("db9615bb-3b4b-47e2-a27e-a2fd6b682654"));
 }

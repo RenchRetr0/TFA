@@ -5,12 +5,7 @@ namespace TFA.Domain.Tests;
 
 public class CreateTopicCommandValidatorShould
 {
-    private readonly CreateTopicCommandValidator sut;
-
-    public CreateTopicCommandValidatorShould()
-    {
-        sut = new CreateTopicCommandValidator();
-    }
+    private readonly CreateTopicCommandValidator sut = new();
 
     [Fact]
     public void ReturnSuccess_WhenCommandValid()

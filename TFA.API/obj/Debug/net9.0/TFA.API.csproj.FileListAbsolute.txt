@@ -211,3 +211,8 @@ D:\C#-projects\TFA\TFA.API\bin\Debug\net9.0\Serilog.Sinks.File.dll
 D:\C#-projects\TFA\TFA.API\bin\Debug\net9.0\Serilog.Sinks.Grafana.Loki.dll
 D:\C#-projects\TFA\TFA.API\bin\Debug\net9.0\Serilog.Sinks.OpenSearch.dll
 D:\C#-projects\TFA\TFA.API\bin\Debug\net9.0\Serilog.Sinks.PeriodicBatching.dll
+D:\C#-projects\TFA\TFA.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\C#-projects\TFA\TFA.API\bin\Debug\net9.0\TFA.Domain.DependencyInjection.dll
+D:\C#-projects\TFA\TFA.API\bin\Debug\net9.0\TFA.Storage.DependencyInjection.dll
+D:\C#-projects\TFA\TFA.API\bin\Debug\net9.0\TFA.Domain.DependencyInjection.pdb
+D:\C#-projects\TFA\TFA.API\bin\Debug\net9.0\TFA.Storage.DependencyInjection.pdb

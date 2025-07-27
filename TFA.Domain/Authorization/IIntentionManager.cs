@@ -9,7 +9,7 @@ public interface IIntentionManager
     bool IsAllowed<TIntention, TObject>(TIntention intention, TObject target) where TIntention : struct;
 }
 
-public class IntentionManager : IIntentionManager
+internal class IntentionManager : IIntentionManager
 {
     private readonly IEnumerable<IIntentionResolver> resolvers;
     private readonly IIdentityProvider identityProvider;
@@ -36,11 +36,11 @@ public class IntentionManager : IIntentionManager
     }
 }
 
-public static class IntentionManagerExceptions
+internal static class IntentionManagerExceptions
 {
     public static void ThrowIfForbidden<TIntention>(this IIntentionManager intentionManager, TIntention intention) where TIntention : struct
     {
-        if(!intentionManager.IsAllowed(intention))
+        if (!intentionManager.IsAllowed(intention))
         {
             throw new IntentionManagerException();
         }

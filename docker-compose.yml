@@ -1,4 +1,4 @@
-version: '3.9'
+name: 'tfa'
 
 networks:
   default:
@@ -7,6 +7,8 @@ networks:
 volumes:
   tfa-pg:
   tfa-logs:
+  tfa-os:
+  tfa-osd:
 
 services:
   postgres:
@@ -23,20 +25,21 @@ services:
 
   opensearch:
     container_name: 'tfa-os'
-    image: 'opensearchproject/opensearch:2'
+    image: 'opensearchproject/opensearch:3'
     ports:
       - '9200:9200'
       - '9600:9600'
     environment:
       discovery.type: 'single-node'
-      plugins.security.disable: 'true'
+      plugins.security.disabled: 'true'
       OPENSEARCH_INITIAL_ADMIN_PASSWORD: 'McGunSta19'
     volumes:
       - tfa-logs:/usr/share/opensearch/data
 
   opensearch-dashboards:
     container_name: 'tfa-osd'
-    image: 'opensearchproject/opensearch-dashboards:2.9.0'
+    # image: 'opensearchproject/opensearch-dashboards:2.9.0'
+    image: 'opensearchproject/opensearch-dashboards:latest'
     ports:
       - '5601:5601'
     environment:

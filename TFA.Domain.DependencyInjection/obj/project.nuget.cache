@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "mTMV5X3p5EM=",
+  "success": true,
+  "projectFilePath": "D:\\C#-projects\\TFA\\TFA.Domain.DependencyInjection\\TFA.Domain.DependencyInjection.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\logis\\.nuget\\packages\\fluentvalidation\\12.0.0\\fluentvalidation.12.0.0.nupkg.sha512",
+    "C:\\Users\\logis\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\12.0.0\\fluentvalidation.dependencyinjectionextensions.12.0.0.nupkg.sha512",
+    "C:\\Users\\logis\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.7\\microsoft.extensions.dependencyinjection.abstractions.9.0.7.nupkg.sha512"
+  ],
+  "logs": []
+}
