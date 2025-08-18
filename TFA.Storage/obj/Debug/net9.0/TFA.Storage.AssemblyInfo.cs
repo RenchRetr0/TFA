@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TFA.Storage")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+610a9fd6ef64364ca88e3d553f9f6ab926d686bf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8ea12aff42a5e9cff03a158184ae70bf386ea84f")]
 [assembly: System.Reflection.AssemblyProductAttribute("TFA.Storage")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TFA.Storage")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

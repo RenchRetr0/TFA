@@ -13,7 +13,8 @@ public static class ProblemDetailsFactoryExtensions
         this ProblemDetailsFactory factory,
         HttpContext httpContext,
         IntentionManagerException intentionManagerException
-    ){
+    )
+    {
         return factory.CreateProblemDetails(
             httpContext,
             StatusCodes.Status403Forbidden,
@@ -29,16 +30,17 @@ public static class ProblemDetailsFactoryExtensions
             factory.CreateProblemDetails(httpContext,
                 domainException.ErrorCode switch
                 {
-                    ErrorCode.Gone => StatusCodes.Status410Gone,
+                    DomainErrorCode.Gone => StatusCodes.Status410Gone,
                     _ => StatusCodes.Status500InternalServerError
                 },
                 domainException.Message);
-        
+
     public static ProblemDetails CreateFrom(
         this ProblemDetailsFactory factory,
         HttpContext httpContext,
         ValidationException validationException
-    ){
+    )
+    {
         var modelStateDictionary = new ModelStateDictionary();
         foreach (var error in validationException.Errors)
         {

@@ -14,3 +14,5 @@ D:\C#-projects\TFA\TFA.Storage\obj\Debug\net9.0\TFA.Storage.sourcelink.json
 D:\C#-projects\TFA\TFA.Storage\bin\Debug\net9.0\TFA.Domain.dll
 D:\C#-projects\TFA\TFA.Storage\bin\Debug\net9.0\TFA.Domain.pdb
 D:\C#-projects\TFA\TFA.Storage\obj\Debug\net9.0\TFA.Stor.BDC7F30B.Up2Date
+D:\C#-projects\TFA\TFA.Storage\bin\Debug\net9.0\TFA.Storage.runtimeconfig.json
+D:\C#-projects\TFA\TFA.Storage\obj\Debug\net9.0\TFA.Storage.genruntimeconfig.cache

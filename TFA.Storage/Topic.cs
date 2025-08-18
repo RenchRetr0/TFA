@@ -9,7 +9,8 @@ public class Topic
     [Key]
     public Guid TopicId { get; set; }
 
-    public required string Title {get; set; }
+    [MaxLength(100)]
+    public required string Title { get; set; }
 
     public Guid UserId { get; set; }
 

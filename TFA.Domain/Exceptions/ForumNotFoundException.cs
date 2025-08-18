@@ -2,15 +2,15 @@ namespace TFA.Domain.Exceptions;
 
 public class ForumNotFoundException : DomainException
 {
-    public ForumNotFoundException(Guid forumId) : base(ErrorCode.Gone, $"Forum with id {forumId} was not found")
-    {}
+    public ForumNotFoundException(Guid forumId) : base(DomainErrorCode.Gone, $"Forum with id {forumId} was not found")
+    { }
 }
 
-public abstract class DomainException: Exception
+public abstract class DomainException : Exception
 {
-    public ErrorCode ErrorCode { get; }
+    public DomainErrorCode ErrorCode { get; }
 
-    public DomainException(ErrorCode errorCode, string message): base(message)
+    public DomainException(DomainErrorCode errorCode, string message) : base(message)
     {
         ErrorCode = errorCode;
     }

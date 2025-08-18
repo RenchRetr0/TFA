@@ -1,7 +1,7 @@
 using FluentAssertions;
 using TFA.Domain.UseCase.CreateTopic;
 
-namespace TFA.Domain.Tests;
+namespace TFA.Domain.Tests.CreateTopic;
 
 public class CreateTopicCommandValidatorShould
 {
@@ -18,10 +18,10 @@ public class CreateTopicCommandValidatorShould
     public static IEnumerable<object[]> GetInvalidCommands()
     {
         var validCommand = new CreateTopicCommand(Guid.Parse("434073c0-e9af-4c65-9839-e86ee6f777b2"), "Hello");
-        yield return new object[]{ validCommand with { ForumId = Guid.Empty }};
-        yield return new object[]{ validCommand with { Title = string.Empty }};
-        yield return new object[]{ validCommand with { Title = "    " }};
-        yield return new object[]{ validCommand with { Title = string.Join("a", Enumerable.Range(0, 100)) }};
+        yield return new object[] { validCommand with { ForumId = Guid.Empty } };
+        yield return new object[] { validCommand with { Title = string.Empty } };
+        yield return new object[] { validCommand with { Title = "    " } };
+        yield return new object[] { validCommand with { Title = string.Join("a", Enumerable.Range(0, 100)) } };
     }
 
     [Theory]
