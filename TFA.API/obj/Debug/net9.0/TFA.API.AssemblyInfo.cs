@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TFA.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ad4f6adcf0c3c182a2e693c2d36486c036aa1df")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+95d0a0b391e4f7c182919b4607bab6165086247d")]
 [assembly: System.Reflection.AssemblyProductAttribute("TFA.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TFA.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
