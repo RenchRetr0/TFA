@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TFA.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8ea12aff42a5e9cff03a158184ae70bf386ea84f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ad4f6adcf0c3c182a2e693c2d36486c036aa1df")]
 [assembly: System.Reflection.AssemblyProductAttribute("TFA.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TFA.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

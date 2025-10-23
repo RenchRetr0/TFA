@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using TFA.API.Models;
+using TFA.Domain.UseCase.CreateForum;
 using TFA.Domain.UseCase.CreateTopic;
 using TFA.Domain.UseCase.GetForums;
 using TFA.Domain.UseCase.GetTopics;
@@ -10,12 +11,26 @@ namespace TFA.API.Controllers;
 [Route("forums")]
 public class ForumController : ControllerBase
 {
+    [HttpPost]
+    public async Task<IActionResult> CreateForum(
+        [FromBody] CreateForum request,
+        [FromServices] ICreateForumUseCase useCase,
+        CancellationToken cancellationToken)
+    {
+        var command = new CreateForumCommand(request.Title);
+        var forum = await useCase.Execute(command, cancellationToken);
+        return CreatedAtRoute(nameof(GetForums), new Forum
+        {
+            Id = forum.Id,
+            Title = forum.Title
+        });
+    }
+
     [HttpGet(Name = nameof(GetForums))]
     [ProducesResponseType(200, Type = typeof(Forum[]))]
     public async Task<IActionResult> GetForums(
         [FromServices] IGetForumsUseCase useCase,
-        CancellationToken cancellationToken
-    )
+        CancellationToken cancellationToken)
     {
         var forums = await useCase.Execute(cancellationToken);
         return Ok(forums.Select(f => new Forum
@@ -34,8 +49,7 @@ public class ForumController : ControllerBase
         Guid forumId,
         [FromBody] CreateTopic request,
         [FromServices] ICreateTopicUseCase useCase,
-        CancellationToken cancellationToken
-    )
+        CancellationToken cancellationToken)
     {
         var command = new CreateTopicCommand(forumId, request.Title);
         var topic = await useCase.Execute(command, cancellationToken);
@@ -56,8 +70,7 @@ public class ForumController : ControllerBase
         [FromQuery] int skip,
         [FromQuery] int take,
         [FromServices] IGetTopicsUseCase useCase,
-        CancellationToken cancellationToken
-    )
+        CancellationToken cancellationToken)
     {
         var query = new GetTopicsQuery(forumId, skip, take);
         var (resources, totalCount) = await useCase.Execute(query, cancellationToken);

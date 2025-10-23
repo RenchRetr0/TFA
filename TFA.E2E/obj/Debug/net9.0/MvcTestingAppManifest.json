@@ -1,0 +1,7 @@
+{
+  "TFA.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\C#-projects\\TFA\\TFA.API",
+  "TFA.Domain.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\C#-projects\\TFA\\TFA.Domain.DependencyInjection",
+  "TFA.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\C#-projects\\TFA\\TFA.Domain",
+  "TFA.Storage.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\C#-projects\\TFA\\TFA.Storage.DependencyInjection",
+  "TFA.Storage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\C#-projects\\TFA\\TFA.Storage"
+}

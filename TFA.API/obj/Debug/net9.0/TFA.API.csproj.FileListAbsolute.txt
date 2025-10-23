@@ -216,8 +216,3 @@ D:\C#-projects\TFA\TFA.API\bin\Debug\net9.0\TFA.Domain.DependencyInjection.dll
 D:\C#-projects\TFA\TFA.API\bin\Debug\net9.0\TFA.Storage.DependencyInjection.dll
 D:\C#-projects\TFA\TFA.API\bin\Debug\net9.0\TFA.Domain.DependencyInjection.pdb
 D:\C#-projects\TFA\TFA.API\bin\Debug\net9.0\TFA.Storage.DependencyInjection.pdb
-D:\C#-projects\TFA\TFA.API\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
-D:\C#-projects\TFA\TFA.API\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
-D:\C#-projects\TFA\TFA.API\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
-D:\C#-projects\TFA\TFA.API\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
-D:\C#-projects\TFA\TFA.API\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
