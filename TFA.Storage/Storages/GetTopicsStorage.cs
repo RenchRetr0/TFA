@@ -1,3 +1,5 @@
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
 using TFA.Domain.UseCase.GetTopics;
 
@@ -6,12 +8,15 @@ namespace TFA.Storage.Storages;
 internal class GetTopicsStorage : IGetTopicsStorage
 {
     private readonly ForumDbContext dbContext;
+    private readonly IMapper mapper;
 
     public GetTopicsStorage(
-        ForumDbContext dbContext
+        ForumDbContext dbContext,
+        IMapper mapper
     )
     {
         this.dbContext = dbContext;
+        this.mapper = mapper;
     }
 
     public async Task<(IEnumerable<Domain.Models.Topic> resources, int totalCount)> GetTopics(
@@ -23,14 +28,7 @@ internal class GetTopicsStorage : IGetTopicsStorage
 
         var resources = await dbContext.Topics
             .Where(t => t.ForumId == forumId)
-            .Select(t => new Domain.Models.Topic
-            {
-                Id = t.TopicId,
-                ForumId = t.ForumId,
-                Title = t.Title,
-                UserId = t.UserId,
-                CreatedAt = t.CreatedAt,
-            })
+            .ProjectTo<Domain.Models.Topic>(mapper.ConfigurationProvider)
             .Skip(skip)
             .Take(take)
             .ToArrayAsync(cancellationToken);

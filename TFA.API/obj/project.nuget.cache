@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "XdYFGfIteqE=",
+  "dgSpecHash": "O9x02N9qe10=",
   "success": true,
   "projectFilePath": "D:\\C#-projects\\TFA\\TFA.API\\TFA.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\logis\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\logis\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\logis\\.nuget\\packages\\fluentvalidation\\12.0.0\\fluentvalidation.12.0.0.nupkg.sha512",
     "C:\\Users\\logis\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\12.0.0\\fluentvalidation.dependencyinjectionextensions.12.0.0.nupkg.sha512",
     "C:\\Users\\logis\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

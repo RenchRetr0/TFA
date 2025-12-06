@@ -8,6 +8,7 @@ public class Forum
     [Key]
     public Guid ForumId { get; set; }
 
+    [MaxLength(50)]
     public required string Title { get; set; }
 
     [InverseProperty(nameof(Topic.Forum))]

@@ -1,5 +1,6 @@
-using System;
+using System.Net.Http.Json;
 using FluentAssertions;
+using TFA.API.Models;
 
 namespace TFA.E2E;
 
@@ -13,14 +14,31 @@ public class ForumEndpointsShould : IClassFixture<ForumApiApplicationFactory>
     }
 
     [Fact]
-    public async Task ReturnListOfForums()
+    public async Task CreateNewForum()
     {
+        var jsonContent = JsonContent.Create(new { title = "Test" });
+
         using var httpClient = factory.CreateClient();
-        using var response = await httpClient.GetAsync("forums");
+
+        using var getInitialForumsResponse = await httpClient.GetAsync("forums");
+        var initialForums = await getInitialForumsResponse.Content.ReadFromJsonAsync<Forum[]>();
+        initialForums
+            .Should().NotBeNull().And
+            .Subject.As<Forum[]>().Should().BeEmpty();
+
+        using var response = await httpClient.PostAsync("forums", jsonContent);
 
         response.Invoking(r => r.EnsureSuccessStatusCode()).Should().NotThrow();
+        var forum = await response.Content.ReadFromJsonAsync<Forum>();
+        forum
+            .Should().NotBeNull().And
+            .Subject.As<Forum>().Title.Should().Be("Test");
+        forum?.Id.Should().NotBeEmpty();
 
-        var result = await response.Content.ReadAsStringAsync();
-        result.Should().Be("[]");
+        using var getForumsResponse = await httpClient.GetAsync("forums");
+        var forums = await getForumsResponse.Content.ReadFromJsonAsync<Forum[]>();
+        forums
+            .Should().NotBeNull().And
+            .Subject.As<Forum[]>().Should().Contain(f => f.Title == "Test");
     }
 }

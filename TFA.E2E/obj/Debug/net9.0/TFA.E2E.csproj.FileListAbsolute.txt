@@ -326,7 +326,6 @@ D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\FluentValidation.dll
 D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\FluentValidation.DependencyInjectionExtensions.dll
 D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\Microsoft.AspNetCore.Mvc.Testing.dll
 D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\Microsoft.AspNetCore.TestHost.dll
-D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
 D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -360,7 +359,6 @@ D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\Serilog.Sinks.OpenSearch.dll
 D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\Serilog.Sinks.PeriodicBatching.dll
 D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\ICSharpCode.SharpZipLib.dll
 D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\Renci.SshNet.dll
-D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\SshNet.Security.Cryptography.dll
 D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -458,3 +456,5 @@ D:\C#-projects\TFA\TFA.E2E\obj\Debug\net9.0\refint\TFA.E2E.dll
 D:\C#-projects\TFA\TFA.E2E\obj\Debug\net9.0\TFA.E2E.pdb
 D:\C#-projects\TFA\TFA.E2E\obj\Debug\net9.0\TFA.E2E.genruntimeconfig.cache
 D:\C#-projects\TFA\TFA.E2E\obj\Debug\net9.0\ref\TFA.E2E.dll
+D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\AutoMapper.dll
+D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

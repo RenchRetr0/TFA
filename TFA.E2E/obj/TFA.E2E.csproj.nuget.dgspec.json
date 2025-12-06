@@ -323,9 +323,13 @@
               "target": "Package",
               "version": "[9.0.1, )"
             },
+            "Testcontainers": {
+              "target": "Package",
+              "version": "[4.9.0, )"
+            },
             "Testcontainers.PostgreSql": {
               "target": "Package",
-              "version": "[3.5.0, )"
+              "version": "[4.9.0, )"
             },
             "coverlet.collector": {
               "target": "Package",
@@ -405,6 +409,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
               "version": "[9.0.7, )"
@@ -474,6 +482,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.1, )"

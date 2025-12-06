@@ -26,7 +26,7 @@ public class ErrorHandlingMiddleware
             logger.LogError("Error handling started for request in path {RequestPath}", httpContext.Request.Path.Value);
             await next.Invoke(httpContext);
         }
-        catch(Exception exception)
+        catch (Exception exception)
         {
             logger.LogError(
                 exception,
@@ -71,9 +71,9 @@ public class ErrorHandlingMiddleware
             //             "Unhandled error! Please contact us."
             //         ),
             // };
-            
-            httpContext .Response.StatusCode = problemDetails.Status ?? StatusCodes.Status500InternalServerError;
-            await httpContext.Response.WriteAsJsonAsync(problemDetails, problemDetails.GetType());
+
+            httpContext.Response.StatusCode = problemDetails.Status ?? StatusCodes.Status500InternalServerError;
+            await httpContext.Response.WriteAsJsonAsync(problemDetails);
         }
     }
 }

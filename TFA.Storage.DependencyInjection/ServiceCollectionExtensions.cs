@@ -1,3 +1,4 @@
+using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using TFA.Domain.UseCase.CreateForum;
@@ -23,6 +24,9 @@ public static class ServiceCollectionExtensions
                 .UseNpgsql(dbConnectionString));
 
         services.AddMemoryCache();
+
+        services.AddAutoMapper(config => config
+            .AddMaps(Assembly.GetAssembly(typeof(ForumDbContext))));
 
         return services;
     }
