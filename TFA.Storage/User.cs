@@ -11,6 +11,12 @@ public class User
     [MaxLength(20)]
     public required string Login { get; set; }
 
+    [MaxLength(100)]
+    public required byte[] Salt { get; set; }
+
+    [MaxLength(32)]
+    public required byte[] PasswordHash { get; set; }
+
     [InverseProperty(nameof(Topic.Author))]
     public ICollection<Topic>? Topics { get; set; }
 

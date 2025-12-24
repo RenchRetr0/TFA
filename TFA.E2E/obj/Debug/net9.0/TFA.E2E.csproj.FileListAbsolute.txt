@@ -147,8 +147,6 @@ D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\refs\Microsoft.Extensions.Logging.Tr
 D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\refs\Microsoft.Extensions.ObjectPool.dll
 D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\refs\Microsoft.Extensions.Options.DataAnnotations.dll
-D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\refs\Microsoft.Extensions.Options.dll
-D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\refs\Microsoft.Extensions.Primitives.dll
 D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\refs\Microsoft.Extensions.WebEncoders.dll
 D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\refs\Microsoft.JSInterop.dll
 D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\refs\Microsoft.Net.Http.Headers.dll
@@ -458,3 +456,5 @@ D:\C#-projects\TFA\TFA.E2E\obj\Debug\net9.0\TFA.E2E.genruntimeconfig.cache
 D:\C#-projects\TFA\TFA.E2E\obj\Debug\net9.0\ref\TFA.E2E.dll
 D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\AutoMapper.dll
 D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+D:\C#-projects\TFA\TFA.E2E\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll

@@ -52,7 +52,7 @@ public class GetTopicsUseCaseShould
         var forumId = Guid.Parse("4b29e740-891e-417f-a5da-870be911d57c");
 
         getForumsSetup.ReturnsAsync([new() { Id = Guid.Parse("4b29e740-891e-417f-a5da-870be911d57c"), Title = "Hello world" }]);
-        var expectedResources = new Topic[] { new Topic() };
+        var expectedResources = new Topic[] { new Topic { Title = "test" } };
         var expectedTotalCount = 6;
         getTopicsSetup.ReturnsAsync((expectedResources, expectedTotalCount));
 

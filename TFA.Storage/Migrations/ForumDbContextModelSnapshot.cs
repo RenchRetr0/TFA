@@ -112,6 +112,16 @@ namespace TFA.Storage.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("character varying(20)");
 
+                    b.Property<byte[]>("PasswordHash")
+                        .IsRequired()
+                        .HasMaxLength(32)
+                        .HasColumnType("bytea");
+
+                    b.Property<byte[]>("Salt")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("bytea");
+
                     b.HasKey("UserId");
 
                     b.ToTable("Users");

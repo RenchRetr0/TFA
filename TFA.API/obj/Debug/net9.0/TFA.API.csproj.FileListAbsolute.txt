@@ -218,3 +218,5 @@ D:\C#-projects\TFA\TFA.API\bin\Debug\net9.0\TFA.Domain.DependencyInjection.pdb
 D:\C#-projects\TFA\TFA.API\bin\Debug\net9.0\TFA.Storage.DependencyInjection.pdb
 D:\C#-projects\TFA\TFA.API\bin\Debug\net9.0\AutoMapper.dll
 D:\C#-projects\TFA\TFA.API\bin\Debug\net9.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\C#-projects\TFA\TFA.API\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+D:\C#-projects\TFA\TFA.API\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll

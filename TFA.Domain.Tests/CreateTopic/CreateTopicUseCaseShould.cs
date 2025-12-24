@@ -82,7 +82,7 @@ public class CreateTopicUseCaseShould
         intentionIsAllowedSetup.Returns(true);
         getForumsSetup.ReturnsAsync(new Forum[] { new Forum { Id = forumId, Title = titlePublic } });
         getCurrentUserIdSetup.Returns(userId);
-        var expected = new Models.Topic();
+        var expected = new Topic { Title = "test" };
         createTopicSetup.ReturnsAsync(expected);
 
         var actual = await sut.Execute(new CreateTopicCommand(forumId, titlePublic), CancellationToken.None);

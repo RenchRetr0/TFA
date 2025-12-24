@@ -1,6 +1,6 @@
 namespace TFA.Domain.Authentication;
 
-internal interface IIdentityProvider
+public interface IIdentityProvider
 {
-    IIdentity Current { get; }
+    IIdentity Current { get; set; }
 }
