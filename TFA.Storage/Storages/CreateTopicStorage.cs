@@ -2,6 +2,7 @@ using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
 using TFA.Domain.UseCase.CreateTopic;
+using TFA.Storage.Entities;
 
 namespace TFA.Storage.Storages;
 

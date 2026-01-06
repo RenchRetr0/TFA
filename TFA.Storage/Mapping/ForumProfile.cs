@@ -1,4 +1,5 @@
 using AutoMapper;
+using TFA.Storage.Entities;
 
 namespace TFA.Storage.Mapping;
 
