@@ -68,8 +68,9 @@ public class CreateTopicUseCaseShould
         intentionIsAllowedSetup.Returns(true);
         getForumsSetup.ReturnsAsync(Array.Empty<Forum>());
 
-        await sut.Invoking(s => s.Execute(new CreateTopicCommand(forumId, "Some Title"), CancellationToken.None))
-            .Should().ThrowAsync<ForumNotFoundException>();
+        (await sut.Invoking(s => s.Execute(new CreateTopicCommand(forumId, "Some Title"), CancellationToken.None))
+            .Should().ThrowAsync<ForumNotFoundException>())
+            .Which.ErrorCode.Should().Be(DomainErrorCode.Gone);
     }
 
     [Fact]
@@ -80,7 +81,7 @@ public class CreateTopicUseCaseShould
         var titlePublic = "Hello world";
 
         intentionIsAllowedSetup.Returns(true);
-        getForumsSetup.ReturnsAsync(new Forum[] { new Forum { Id = forumId, Title = titlePublic } });
+        getForumsSetup.ReturnsAsync([new Forum { Id = forumId, Title = titlePublic }]);
         getCurrentUserIdSetup.Returns(userId);
         var expected = new Topic { Title = "test" };
         createTopicSetup.ReturnsAsync(expected);

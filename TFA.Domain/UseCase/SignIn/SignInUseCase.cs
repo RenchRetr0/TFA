@@ -1,6 +1,8 @@
 using FluentValidation;
+using FluentValidation.Results;
 using Microsoft.Extensions.Options;
 using TFA.Domain.Authentication;
+using TFA.Domain.Exceptions;
 
 namespace TFA.Domain.UseCase.SignIn;
 
@@ -31,11 +33,25 @@ internal class SignInUseCase : ISignInUseCase
         await validator.ValidateAndThrowAsync(command, cancellationToken);
 
         var recognizedUser = await storage.FindUser(command.Login, cancellationToken);
-        if (recognizedUser is null) throw new Exception();
+        if (recognizedUser is null) throw new ValidationException([
+            new()
+            {
+                PropertyName = nameof(command.Login),
+                ErrorCode = ValidationErrorCode.Invalid,
+                AttemptedValue = command.Login
+            }
+        ]);
 
         var passwordMatches = passwordManager.ComparePasswords(
             command.Password, recognizedUser.Salt, recognizedUser.PasswordHash);
-        if (!passwordMatches) throw new Exception();
+        if (!passwordMatches) throw new ValidationException([
+            new()
+            {
+                PropertyName = nameof(command.Password),
+                ErrorCode = ValidationErrorCode.Invalid,
+                AttemptedValue = command.Password
+            }
+        ]);
 
         var token = await encryptor.Encrypt(
             recognizedUser.UserId.ToString(), configuration.Key, cancellationToken);

@@ -1,7 +1,6 @@
 using System.Security.Cryptography;
 using FluentAssertions;
 using TFA.Domain.Authentication;
-using Xunit.Abstractions;
 
 namespace TFA.Domain.Tests.Authentication;
 
@@ -9,12 +8,6 @@ public class AesSymmetricEncryptorDecryptorShould
 {
     private readonly AesSymmetricEncryptorDecryptor sut = new();
     private readonly byte[] key = RandomNumberGenerator.GetBytes(32);
-    private readonly ITestOutputHelper testOutputHelper;
-
-    public AesSymmetricEncryptorDecryptorShould(ITestOutputHelper testOutputHelper)
-    {
-        this.testOutputHelper = testOutputHelper;
-    }
 
     [Fact]
     public async Task ReturnMeaningfulEncryptedString()

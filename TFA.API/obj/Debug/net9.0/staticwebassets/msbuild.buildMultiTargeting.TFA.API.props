@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\TFA.API.props" />
-</Project>
