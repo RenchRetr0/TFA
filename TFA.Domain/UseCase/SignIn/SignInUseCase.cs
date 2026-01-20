@@ -53,8 +53,11 @@ internal class SignInUseCase : ISignInUseCase
             }
         ]);
 
-        var token = await encryptor.Encrypt(
-            recognizedUser.UserId.ToString(), configuration.Key, cancellationToken);
-        return (new User(recognizedUser.UserId), token);
+        // TODO
+        // Expiration moment generation is ugly
+        var sesstionId = await storage.CreateSession(
+            recognizedUser.UserId, DateTimeOffset.Now + TimeSpan.FromHours(1), cancellationToken);
+        var token = await encryptor.Encrypt(sesstionId.ToString(), configuration.Key, cancellationToken);
+        return (new User(recognizedUser.UserId, sesstionId), token);
     }
 }

@@ -19,7 +19,7 @@ public class StorageTestFixture : IAsyncLifetime
 
     public IMemoryCache GetMemoryCache() => new MemoryCache(new MemoryCacheOptions());
 
-    public async Task InitializeAsync()
+    public virtual async Task InitializeAsync()
     {
         await dbContainer.StartAsync();
         var forumDbContext = new ForumDbContext(new DbContextOptionsBuilder<ForumDbContext>()

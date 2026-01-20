@@ -9,6 +9,7 @@ using TFA.Domain.UseCase.GetForums;
 using TFA.Domain.UseCase.GetTopics;
 using TFA.Domain.UseCase.SignIn;
 using TFA.Domain.UseCase.SignOn;
+using TFA.Domain.UseCase.SignOut;
 
 namespace TFA.Domain.DependencyInjection;
 
@@ -24,6 +25,7 @@ public static class ServiceCollectionExtensions
             .AddScoped<IGetTopicsUseCase, GetTopicsUseCase>()
             .AddScoped<ISignOnUseCase, SingOnUseCase>()
             .AddScoped<ISignInUseCase, SignInUseCase>()
+            .AddScoped<ISignOutUseCase, SignOutUseCase>()
             .AddScoped<IIntentionResolver, TopicIntentionResolver>();
 
         services

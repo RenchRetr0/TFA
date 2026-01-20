@@ -15,6 +15,9 @@ public class SignInUseCaseShould
     private readonly ISetup<ISignInStorage, Task<RecognizedUser?>> findUserSetup;
     private readonly ISetup<IPasswordManager, bool> comparePasswordsSetup;
     private readonly ISetup<ISymmetricEncryptor, Task<string>> encryptSetup;
+    private readonly ISetup<ISignInStorage, Task<Guid>> createSessionSetup;
+    private readonly Mock<ISignInStorage> storage;
+    private readonly Mock<ISymmetricEncryptor> encryptor;
 
     public SignInUseCaseShould()
     {
@@ -23,14 +26,15 @@ public class SignInUseCaseShould
             .Setup(v => v.ValidateAsync(It.IsAny<SignInCommand>(), It.IsAny<CancellationToken>()))
             .ReturnsAsync(new ValidationResult());
 
-        var storage = new Mock<ISignInStorage>();
+        storage = new Mock<ISignInStorage>();
         findUserSetup = storage.Setup(s => s.FindUser(It.IsAny<string>(), It.IsAny<CancellationToken>()));
+        createSessionSetup = storage.Setup(s => s.CreateSession(It.IsAny<Guid>(), It.IsAny<DateTimeOffset>(), It.IsAny<CancellationToken>()));
 
         var passwordManger = new Mock<IPasswordManager>();
         comparePasswordsSetup = passwordManger.Setup(
             m => m.ComparePasswords(It.IsAny<string>(), It.IsAny<byte[]>(), It.IsAny<byte[]>()));
 
-        var encryptor = new Mock<ISymmetricEncryptor>();
+        encryptor = new Mock<ISymmetricEncryptor>();
         encryptSetup = encryptor.Setup(e => e.Encrypt(It.IsAny<string>(), It.IsAny<byte[]>(), It.IsAny<CancellationToken>()));
 
         var configuration = new Mock<IOptions<AuthenticationConfiguration>>();
@@ -78,9 +82,28 @@ public class SignInUseCaseShould
     }
 
     [Fact]
-    public async Task ReturnToken()
+    public async Task CreateSession_WhenPasswordMatches()
+    {
+        var userId = Guid.Parse("e8e9507e-1b4b-43d8-a784-73aa1ab453cc");
+        var sessionId = Guid.Parse("15d27d34-8a08-4ec1-812c-c4ae6a579615");
+        findUserSetup.ReturnsAsync(new RecognizedUser
+        {
+            UserId = userId,
+            PasswordHash = [2],
+            Salt = [1],
+        });
+        comparePasswordsSetup.Returns(true);
+        createSessionSetup.ReturnsAsync(sessionId);
+
+        await sut.Execute(new SignInCommand("test", "test228"), CancellationToken.None);
+        storage.Verify(s => s.CreateSession(userId, It.IsAny<DateTimeOffset>(), It.IsAny<CancellationToken>()), Times.Once);
+    }
+
+    [Fact]
+    public async Task ReturnTokenAndIdentity()
     {
         var userId = Guid.Parse("c26e9bd4-b96a-4dbc-9441-a3c7c218c00e");
+        var sessionId = Guid.Parse("15d27d34-8a08-4ec1-812c-c4ae6a579615");
         var recognizedUser = new RecognizedUser
         {
             UserId = userId,
@@ -89,11 +112,33 @@ public class SignInUseCaseShould
         };
 
         findUserSetup.ReturnsAsync(recognizedUser);
+        createSessionSetup.ReturnsAsync(sessionId);
         comparePasswordsSetup.Returns(true);
         encryptSetup.ReturnsAsync("token");
 
         var (identity, token) = await sut.Execute(new SignInCommand("Test", "test228"), CancellationToken.None);
         identity.UserId.Should().Be(userId);
+        identity.UserId.Should().Be(userId);
+        identity.SessionId.Should().Be(sessionId);
         token.Should().Be("token");
+    }
+
+    [Fact]
+    public async Task EncryptSessionIdIntoToken()
+    {
+        var userId = Guid.Parse("e8e9507e-1b4b-43d8-a784-73aa1ab453cc");
+        var sessionId = Guid.Parse("15d27d34-8a08-4ec1-812c-c4ae6a579615");
+        findUserSetup.ReturnsAsync(new RecognizedUser
+        {
+            UserId = userId,
+            PasswordHash = [2],
+            Salt = [1],
+        });
+        comparePasswordsSetup.Returns(true);
+        createSessionSetup.ReturnsAsync(sessionId);
+
+        await sut.Execute(new SignInCommand("test", "test228"), CancellationToken.None);
+        encryptor.Verify(e => e
+            .Encrypt(sessionId.ToString(), It.IsAny<byte[]>(), It.IsAny<CancellationToken>()));
     }
 }

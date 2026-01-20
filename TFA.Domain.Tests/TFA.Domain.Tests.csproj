@@ -31,6 +31,7 @@
     <Folder Include="GetForums\" />
     <Folder Include="SignIn\" />
     <Folder Include="SignOn\" />
+    <Folder Include="SignOut\" />
   </ItemGroup>
 
 </Project>

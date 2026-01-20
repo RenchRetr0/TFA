@@ -85,7 +85,7 @@ namespace TFA.Storage.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Session");
+                    b.ToTable("Sessions");
                 });
 
             modelBuilder.Entity("TFA.Storage.Entities.Topic", b =>
